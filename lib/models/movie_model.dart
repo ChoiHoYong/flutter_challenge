@@ -1,7 +1,7 @@
 class MovieModel {
   final bool adult;
   final int id, votecount;
-  final double popularity, voteaverage;
+  // final double popularity, voteaverage;
   final String backdroppath,
       originallanguage,
       originaltitle,
@@ -17,10 +17,10 @@ class MovieModel {
         originallanguage = json['original_language'],
         originaltitle = json['original_title'],
         overview = json['overview'],
-        popularity = json['popularity'],
+        // popularity = json['popularity'],
         posterpath = json['poster_path'],
         releasedate = json['release_date'],
         title = json['title'],
-        votecount = json['vote_count'],
-        voteaverage = json['vote_average'];
+        votecount = json['vote_count'];
+  // voteaverage = json['vote_average'];
 }

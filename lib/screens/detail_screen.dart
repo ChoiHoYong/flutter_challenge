@@ -56,7 +56,7 @@ class _DetailScreenState extends State<DetailScreen> {
           const SizedBox(
             height: 10,
           ),
-          Text(widget.title),
+          Text('제목: ${widget.title}'),
           const SizedBox(
             height: 10,
           ),
@@ -67,20 +67,20 @@ class _DetailScreenState extends State<DetailScreen> {
                 return Column(
                   children: [
                     Text(
-                      snapshot.data!.voteaverage.toStringAsFixed(1),
+                      '등급: ${snapshot.data!.voteaverage.toStringAsFixed(1)}',
                     ),
                     const SizedBox(
                       height: 10,
                     ),
                     Text(
-                      snapshot.data!.overview,
+                      '개요: ${snapshot.data!.overview}',
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
                     ),
                     const SizedBox(
                       height: 10,
                     ),
-                    Text(snapshot.data!.genres.join(', ')),
+                    Text('장르: ${snapshot.data!.genres.join(', ')}'),
                   ],
                 );
               }
