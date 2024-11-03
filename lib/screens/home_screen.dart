@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_challenge/models/movie_model.dart';
 import 'package:flutter_challenge/services/api_service.dart';
+import 'package:flutter_challenge/widgets/movie_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -99,18 +100,11 @@ class HomeScreen extends StatelessWidget {
       itemCount: snapshot.data!.length,
       itemBuilder: (context, index) {
         var movie = snapshot.data![index];
-        return Column(
-          children: [
-            Container(
-              width: 150,
-              clipBehavior: Clip.hardEdge,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-              ),
-              child: Image.network(
-                  'https://image.tmdb.org/t/p/w500/${movie.posterpath}'),
-            ),
-          ],
+        return Movie(
+          id: movie.id,
+          posterpath: movie.posterpath,
+          title: movie.title,
+          overview: movie.overview,
         );
       },
       separatorBuilder: (context, index) => const SizedBox(width: 20),

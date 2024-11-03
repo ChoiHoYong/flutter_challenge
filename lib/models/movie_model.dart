@@ -1,7 +1,7 @@
 class MovieModel {
   final bool adult;
   final int id, votecount;
-  final double popularity;
+  final double popularity, voteaverage;
   final String backdroppath,
       originallanguage,
       originaltitle,
@@ -21,5 +21,6 @@ class MovieModel {
         posterpath = json['poster_path'],
         releasedate = json['release_date'],
         title = json['title'],
-        votecount = json['vote_count'];
+        votecount = json['vote_count'],
+        voteaverage = json['vote_average'];
 }

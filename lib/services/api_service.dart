@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter_challenge/models/movie_detail_model.dart';
 import 'package:flutter_challenge/models/movie_model.dart';
 import 'package:http/http.dart' as http;
 
@@ -54,6 +55,16 @@ class ApiService {
         movieInstances.add(MovieModel.fromJson(movie));
       }
       return movieInstances;
+    }
+    throw Error();
+  }
+
+  static Future<MovieDetailModel> getMovieById(int id) async {
+    final url = Uri.parse('$baseURL/movie?id=$id');
+    final response = await http.get(url);
+    if (response.statusCode == 200) {
+      final movie = jsonDecode(response.body);
+      return MovieDetailModel.fromJson(movie);
     }
     throw Error();
   }
